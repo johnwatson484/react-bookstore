@@ -12,7 +12,9 @@ export class Author extends react.Component {
       author => author.id === this.props.match.params.authorId
     )
     if (!author) {
-      return html`<${FourOhFour} error="Author not found"/>`
+      return html`<${FourOhFour} 
+        staticContext=${this.props.staticContext}
+        error="Author not found"/>`
     }
     return html`<div>
       <${Header}/>
