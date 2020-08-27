@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  react-bookstore:
+    build: .
+    image: react-bookstore
+    container_name: react-bookstore
