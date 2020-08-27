@@ -30,7 +30,10 @@ module.exports = function (env, argv) {
     devtool: isProd ? 'source-maps' : 'eval',
     devServer: {
       historyApiFallback: true,
-      open: true
+      open: true,
+      host: '0.0.0.0',
+      port: '8080',
+      disableHostCheck: true
     },
     optimization: isProd ? {
       minimize: true,
