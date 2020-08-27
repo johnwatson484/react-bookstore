@@ -3,21 +3,14 @@ import htm from 'htm'
 import { Link } from 'react-router-dom'
 import superagent from 'superagent'
 import { Header } from '../Header.js'
+import { AsyncPage } from './AsyncPage.js'
 
 const html = htm.bind(react.createElement)
 
-export class AuthorsIndex extends react.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      authors: [],
-      loading: true
-    }
-  }
-
-  async componentDidMount () {
+export class AuthorsIndex extends AsyncPage {
+  static async preloadAsyncData (props) {
     const { body } = await superagent.get('http://127.0.0.1:3001/api/authors')
-    this.setState({ loading: false, authors: body })
+    return { authors: body }
   }
 
   render () {
