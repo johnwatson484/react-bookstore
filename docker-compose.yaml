@@ -4,3 +4,5 @@ services:
     build: .
     image: react-bookstore
     container_name: react-bookstore
+    environment:
+      ADDRESS: '0.0.0.0'
