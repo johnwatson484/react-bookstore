@@ -10,7 +10,7 @@
     "start:api-watch": "nodemon -r esm --inspect=0.0.0.0 --legacy-watch ./src/api.js",
     "start:server-watch": "nodemon -r esm --inspect=0.0.0.0 --legacy-watch ./src/server.js",
     "start": "npm run build && concurrently \"npm run start:api\" \"npm run start:server\"",
-    "start:watch": "npm run build && concurrently \"npm run start:api\" \"npm run start:server-watch\""
+    "start:watch": "npm run build && concurrently \"npm run start:api-watch\" \"npm run start:server-watch\""
   },
   "repository": {
     "type": "git",
